@@ -5,34 +5,68 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Crypto Price Prediction</title>
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
         body {
             font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
+            line-height: 1.6;
+            background: linear-gradient(to right, #4facfe, #00f2fe);
+            color: #333;
             margin: 0;
         }
-        .container {
-            background-color: white;
-            padding: 20px;
-            border-radius: 10px;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-            width: 400px;
+        header {
+            background: #000080;
+            color: #fff;
+            padding: 10px 0;
             text-align: center;
+            font-size: 1.5em;
         }
-        input[type="text"], button, select {
-            width: 100%;
+        nav {
+            display: flex;
+            justify-content: center;
+            background: #0066cc;
             padding: 10px;
+        }
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 15px;
+            font-weight: bold;
+        }
+        nav a:hover {
+            text-decoration: underline;
+        }
+        .container {
+            padding: 20px;
+            max-width: 800px;
+            margin: 30px auto;
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+            margin-top: 20px;
+        }
+        select, input[type="text"], button {
             margin: 10px 0;
+            padding: 10px;
             border-radius: 5px;
-            border: 1px solid #ccc;
+            border: 1px solid #ddd;
         }
         button {
             background-color: #28a745;
             color: white;
             border: none;
+            font-size: 1em;
             cursor: pointer;
         }
         button:hover {
@@ -41,12 +75,42 @@
         .result {
             margin-top: 20px;
             font-size: 1.2em;
+            color: #000080;
+        }
+        footer {
+            background: #000080;
+            color: #fff;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+            nav a {
+                margin: 10px 0;
+            }
+            .container {
+                width: 90%;
+            }
         }
     </style>
 </head>
 <body>
+    <header>
+        Crypto Price Prediction
+    </header>
+    <nav>
+        <a href="/">Home</a>
+        <a href="/about">About Us</a>
+        <a href="/services">Services</a>
+        <a href="/contact">Contact Us</a>
+    </nav>
     <div class="container">
-        <h1>Crypto Price Prediction</h1>
+        <h1>Predict Bitcoin & Ethereum Prices</h1>
         <form action="/predict" method="POST">
             <select name="coin_type" required>
                 <option value="bitcoin">Bitcoin</option>
@@ -102,5 +166,8 @@
         </div>
         {% endif %}
     </div>
+    <footer>
+        &copy; 2024 Noble Path Capital | Twitter: @noblepathinvest | Email: noblepathcapital@gmail.com
+    </footer>
 </body>
 </html>
